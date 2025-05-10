@@ -1,0 +1,45 @@
+.animation-container {
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px; /* Adjust as needed to give space for the animation */
+    padding: 20px;     /* So you can see the shadow properly */
+    /* overflow: hidden; /* Generally not needed here, can clip animation if not careful */
+}
+
+.image-wrapper {
+    /* --- New Styles for Appearance --- */
+    background-color: rgb(255, 255, 255); /* White background like Framer example */
+    border: 4px solid rgb(18, 18, 18);    /* Border like Framer example */
+    border-radius: 16px;                  /* Outer border-radius like Framer example */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Shadow for the wrapper */
+    display: inline-block; /* This makes the wrapper size itself to its content (image + border) */
+    /* overflow: hidden; /* Optional: if you want to strictly clip image content by the wrapper's rounded border.
+                           With specific image border-radius below, it might not be needed. */
+
+    /* --- Existing Animation Properties --- */
+    transform-style: preserve-3d;
+    transform-origin: center bottom;
+    opacity: 0;
+    transform: rotateX(80deg) scale(0.8);
+    transition: transform 1s ease-out, opacity 0.8s ease-out;
+}
+
+.image-wrapper.animate {
+    opacity: 1;
+    transform: rotateX(0deg) scale(1);
+}
+
+.image-wrapper img {
+    display: block; /* Ensures proper layout within the inline-block wrapper */
+    /* Set a width for your image content. The wrapper will be this width + border. */
+    /* The Framer image (2880x2048) has an aspect ratio of approx 1.40625. */
+    /* Let's set a base width, e.g., 600px. Adjust this to your needs. */
+    width: 600px;
+    height: auto;   /* Maintain aspect ratio */
+    /* The image's border-radius should be the wrapper's radius minus the border width */
+    /* 16px (wrapper) - 4px (border) = 12px */
+    border-radius: 12px;
+    /* max-width: 100%; /* Not needed if width is set explicitly and wrapper is inline-block */
+}
