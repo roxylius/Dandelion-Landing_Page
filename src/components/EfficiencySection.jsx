@@ -32,13 +32,13 @@ const EfficiencySection = () => {
   ];
 
   return (
-    <div className="relative w-full bg-neutral-900 border-b border-neutral-800 min-h-[900px]">
+    <div className="relative mt-20 border-b border-neutral-800 min-h-[900px] bg-neutral-900">
       <div className="container mx-auto px-6 py-20">
         {/* Header Section */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-wide text-white">
             Do more{" "}
-            <span className="bg-gradient-to-r from-green-400 to-cyan-400 text-transparent bg-clip-text">
+            <span className="bg-gradient-to-r from-orange-400 to-red-600 text-transparent bg-clip-text">
               with less
             </span>
           </h2>
@@ -64,7 +64,7 @@ const EfficiencySection = () => {
               
               {/* Percentage */}
               <div className="mb-4">
-                <span className="text-5xl lg:text-6xl font-bold bg-gradient-to-r from-green-400 to-cyan-400 text-transparent bg-clip-text">
+                <span className="text-5xl lg:text-6xl font-bold bg-gradient-to-r from-orange-400 to-red-600 text-transparent bg-clip-text">
                   {stat.percentage}
                 </span>
                 <h3 className="text-2xl lg:text-3xl font-semibold text-white mt-2">
@@ -76,14 +76,14 @@ const EfficiencySection = () => {
               <div className="mb-8">
                 <p className="text-neutral-300 text-base">
                   {stat.description}{" "}
-                  <span className="italic font-medium text-green-400">
+                  <span className="italic font-medium text-orange-400">
                     {stat.highlight}
                   </span>
                 </p>
               </div>
 
               {/* Action Button */}
-              <button className="group inline-flex items-center gap-2 border border-green-500 text-green-400 px-6 py-3 rounded-full hover:bg-green-500 hover:text-neutral-900 transition-all duration-300 font-medium">
+              <button className="group inline-flex items-center gap-2 border border-orange-500 text-orange-400 px-6 py-3 rounded-full hover:bg-orange-500 hover:text-neutral-900 transition-all duration-300 font-medium">
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                 {stat.buttonText}
               </button>
