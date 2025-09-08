@@ -30,7 +30,7 @@ const Navbar = () => {
               Sign In
             </a> */}
             <a
-              href="#"
+              href="#waitlist"
               className="bg-gradient-to-r from-orange-500 to-orange-800 py-2 px-3 rounded-md"
             >
               Join the Waitlist

@@ -76,7 +76,7 @@ const WaitlistSection = () => {
     }
   };
   return (
-    <div className="relative w-full py-20 bg-neutral-900 border-b border-neutral-800 overflow-hidden">
+    <div className="relative w-full py-20 bg-neutral-900 border-b border-neutral-800 overflow-hidden" id="waitlist">
       {/* Background stars/dots effect */}
       {/* <div className="absolute inset-0">
         <div className="absolute top-10 left-10 w-1 h-1 bg-yellow-400 rounded-full animate-pulse"></div>
