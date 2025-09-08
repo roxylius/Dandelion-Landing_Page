@@ -37,9 +37,33 @@ jobs:
           node-version: 20
           cache: 'npm'
       - name: Install dependencies
-        run: npm install
+        run: npm ci
       - name: Build
         run: npm run build
+      - name: Verify build output
+        run: |
+          echo "🔍 Checking build output..."
+          ls -la dist/
+          echo "🔍 Verifying index.html..."
+          test -f dist/index.html && echo "✅ index.html found" || (echo "❌ index.html missing" && exit 1)
+          echo "🔍 Checking assets folder..."
+          ls -la dist/assets/ | head -10
+          echo "🔍 Verifying critical assets..."
+          JS_COUNT=$(find dist/assets/ -name "*.js" -type f | wc -l)
+          CSS_COUNT=$(find dist/assets/ -name "*.css" -type f | wc -l)
+          if [ "$JS_COUNT" -gt 0 ]; then
+            echo "✅ JavaScript files found ($JS_COUNT)"
+          else
+            echo "❌ No JavaScript files found"
+            exit 1
+          fi
+          if [ "$CSS_COUNT" -gt 0 ]; then
+            echo "✅ CSS files found ($CSS_COUNT)"
+          else
+            echo "❌ No CSS files found"
+            exit 1
+          fi
+          echo "🎉 Build verification complete!"
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
