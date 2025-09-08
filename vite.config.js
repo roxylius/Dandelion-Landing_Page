@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/', // Changed to root path for custom domain
+  base: '/Dandelion-Landing_Page/', // This is crucial!
   // An array of plugins to use.
   plugins: [react()],
   // Development server configuration.
