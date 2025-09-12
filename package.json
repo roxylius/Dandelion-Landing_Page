@@ -7,9 +7,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:gh-pages": "vite build --base=/Dandelion-Landing_Page/",
+    "build:gh-pages": "vite build --base=/",
     "preview": "vite preview",
-    "preview:gh": "vite preview --base=/Dandelion-Landing_Page/",
+    "preview:gh": "vite preview --base=/",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0"
   },
   "dependencies": {
