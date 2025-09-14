@@ -32,7 +32,7 @@ const EfficiencySection = () => {
   ];
 
   return (
-    <div id="features" className="relative mt-20 border-b border-neutral-800 min-h-[900px] bg-neutral-900">
+    <div id="workflow" className="relative mt-20 border-b border-neutral-800 min-h-[900px] bg-neutral-900">
       <div className="container mx-auto px-6 py-20">
         {/* Header Section */}
         <div className="text-center mb-16">
