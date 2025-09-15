@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowRight, Twitter, X, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
+import { ArrowRight, Twitter, Linkedin, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 
 const WaitlistSection = () => {
   const [formData, setFormData] = useState({
@@ -197,7 +197,7 @@ const WaitlistSection = () => {
               href="#"
               className="text-neutral-400 hover:text-white transition-colors duration-300 flex items-center gap-2"
             >
-              <X className="w-5 h-5" />
+              <Linkedin className="w-5 h-5" />
             </a>
           </div>
         </div>
