@@ -308,14 +308,14 @@ const JobApplication = () => {
   };
 
   return (
-    <div className="min-h-screen bg-neutral-50">
+    <div className="min-h-screen">
       {/* Header */}
-      <div className="bg-white border-b border-neutral-200">
+      <div className="border-b border-neutral-800">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <button
               onClick={() => navigate('/')}
-              className="flex items-center text-neutral-600 hover:text-neutral-800 transition-colors duration-200"
+              className="flex items-center text-neutral-500 hover:text-white transition-colors duration-200"
             >
               <ArrowLeft className="w-5 h-5 mr-2" />
               Back to Home
@@ -326,7 +326,7 @@ const JobApplication = () => {
                 alt="Ocio Logo" 
                 className="w-8 h-8 object-contain"
               />
-              <span className="font-semibold text-neutral-800">Ocio</span>
+              <span className="font-semibold text-white">Ocio</span>
             </div>
           </div>
         </div>
@@ -334,11 +334,11 @@ const JobApplication = () => {
 
       <div className="container mx-auto px-6 py-8 max-w-4xl">
         {/* Job Header */}
-        <div className="bg-white rounded-lg shadow-sm border border-neutral-200 p-6 mb-6">
-          <h1 className="text-2xl font-bold text-neutral-800 mb-2">
+        <div className="border border-neutral-800 rounded-lg p-6 mb-6">
+          <h1 className="text-2xl font-bold text-white mb-2">
             Full-stack developer Intern, Remote
           </h1>
-          <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-600">
+          <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-500">
             <div className="flex items-center gap-1">
               <MapPin className="w-4 h-4" />
               <span>Bengaluru</span>
@@ -355,23 +355,23 @@ const JobApplication = () => {
         </div>
 
         {/* Job Description */}
-        <div className="bg-white rounded-lg shadow-sm border border-neutral-200 p-6 mb-6">
-          <h2 className="text-xl font-semibold text-neutral-800 mb-4">Job Description</h2>
-          <div className="prose text-neutral-600 space-y-4">
+        <div className="border border-neutral-800 rounded-lg p-6 mb-6">
+          <h2 className="text-xl font-semibold text-white mb-4">Job Description</h2>
+          <div className="prose text-neutral-500 space-y-4">
             <p>
               Join Ocio, an innovative AI-powered recruitment platform that's revolutionizing how companies 
               find and hire talent. We're looking for a passionate Full-stack Developer Intern to help us 
               build cutting-edge solutions that connect the right people with the right opportunities.
             </p>
             
-            <h3 className="text-lg font-medium text-neutral-800">About Ocio:</h3>
+            <h3 className="text-lg font-medium text-white">About Ocio:</h3>
             <p>
               Ocio leverages artificial intelligence to streamline the recruitment process, making it more 
               efficient and effective for both employers and job seekers. Our platform uses advanced algorithms 
               to match candidates with opportunities, reducing hiring time and improving job satisfaction.
             </p>
             
-            <h3 className="text-lg font-medium text-neutral-800">Requirements:</h3>
+            <h3 className="text-lg font-medium text-white">Requirements:</h3>
             <ul className="list-disc list-inside space-y-2">
               <li>Experience with the MERN stack (MongoDB, Express.js, React, Node.js)</li>
               <li>Strong proficiency in JavaScript and modern web development</li>
@@ -382,12 +382,12 @@ const JobApplication = () => {
         </div>
 
         {/* Application Form */}
-        <div className="bg-white rounded-lg shadow-sm border border-neutral-200 p-6">
-          <h2 className="text-xl font-semibold text-neutral-800 mb-6">Submit Your Application</h2>
+        <div className="border border-neutral-800 rounded-lg p-6">
+          <h2 className="text-xl font-semibold text-white mb-6">Submit Your Application</h2>
           
           {/* Status Messages */}
           {submitStatus === 'success' && (
-            <div className="flex items-center gap-3 p-8 bg-green-50 border border-green-200 rounded-lg text-green-700 text-center">
+            <div className="flex items-center gap-3 p-8 bg-green-900/50 border border-green-700 rounded-lg text-green-300 text-center">
               <CheckCircle className="w-8 h-8" />
               <div>
                 <div className="font-medium text-lg">Application submitted successfully!</div>
@@ -397,7 +397,7 @@ const JobApplication = () => {
           )}
           
           {submitStatus === 'error' && (
-            <div className="flex items-center gap-3 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 mb-6">
+            <div className="flex items-center gap-3 p-4 bg-red-900/50 border border-red-700 rounded-lg text-red-300 mb-6">
               <AlertCircle className="w-5 h-5" />
               <div>
                 <div className="font-medium">Application submission failed</div>
@@ -411,10 +411,10 @@ const JobApplication = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
             {/* Resume Upload */}
             <div>
-              <label className="block text-sm font-medium text-neutral-700 mb-2">
-                Resume/CV <span className="text-red-500">*</span>
+              <label className="block text-sm font-medium text-white mb-2">
+                Resume/CV <span className="text-red-400">*</span>
               </label>
-              <div className="border-2 border-dashed border-neutral-300 rounded-lg p-6 text-center hover:border-orange-400 transition-colors duration-200">
+              <div className="border-2 border-dashed border-neutral-800 rounded-lg p-6 text-center hover:border-orange-500 transition-colors duration-200">
                 <input
                   type="file"
                   accept=".pdf,.doc,.docx"
@@ -423,15 +423,15 @@ const JobApplication = () => {
                   id="resume-upload"
                 />
                 <label htmlFor="resume-upload" className="cursor-pointer">
-                  <Upload className="w-8 h-8 text-neutral-400 mx-auto mb-2" />
-                  <div className="text-sm text-neutral-600">
+                  <Upload className="w-8 h-8 text-neutral-500 mx-auto mb-2" />
+                  <div className="text-sm text-neutral-500">
                     {formData.resume ? (
-                      <span className="text-orange-600 font-medium">{formData.resume.name}</span>
+                      <span className="text-orange-500 font-medium">{formData.resume.name}</span>
                     ) : (
                       <>
-                        <span className="text-orange-600 font-medium">Click to upload</span> or drag and drop
+                        <span className="text-orange-500 font-medium">Click to upload</span> or drag and drop
                         <br />
-                        <span className="text-xs text-neutral-400">PDF, DOC, DOCX (max 10MB)</span>
+                        <span className="text-xs text-neutral-500">PDF, DOC, DOCX (max 10MB)</span>
                       </>
                     )}
                   </div>
@@ -442,8 +442,8 @@ const JobApplication = () => {
             {/* Personal Information */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="fullName" className="block text-sm font-medium text-neutral-700 mb-2">
-                  Full name <span className="text-red-500">*</span>
+                <label htmlFor="fullName" className="block text-sm font-medium text-white mb-2">
+                  Full name <span className="text-red-400">*</span>
                 </label>
                 <input
                   type="text"
@@ -452,16 +452,16 @@ const JobApplication = () => {
                   value={formData.fullName}
                   onChange={handleInputChange}
                   disabled={isLoading}
-                  className={`w-full px-3 py-2 border rounded-md text-neutral-100 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed ${
-                    fieldErrors.fullName ? 'border-red-500 bg-red-50' : 'border-neutral-300'
+                  className={`w-full px-3 py-2 border rounded-md bg-neutral-900 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed ${
+                    fieldErrors.fullName ? 'border-red-500 bg-red-900/20' : 'border-neutral-800'
                   }`}
                   placeholder="Enter your full name"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-neutral-700 mb-2">
-                  Email <span className="text-red-500">*</span>
+                <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
+                  Email <span className="text-red-400">*</span>
                 </label>
                 <input
                   type="email"
@@ -470,16 +470,16 @@ const JobApplication = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   disabled={isLoading}
-                  className={`w-full px-3 py-2 border rounded-md text-neutral-100 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed ${
-                    fieldErrors.email ? 'border-red-500 bg-red-50' : 'border-neutral-300'
+                  className={`w-full px-3 py-2 border rounded-md bg-neutral-900 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed ${
+                    fieldErrors.email ? 'border-red-500 bg-red-900/20' : 'border-neutral-800'
                   }`}
                   placeholder="Enter your email address"
                 />
               </div>
 
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-neutral-700 mb-2">
-                  Phone <span className="text-red-500">*</span>
+                <label htmlFor="phone" className="block text-sm font-medium text-white mb-2">
+                  Phone <span className="text-red-400">*</span>
                 </label>
                 <input
                   type="tel"
@@ -488,16 +488,16 @@ const JobApplication = () => {
                   value={formData.phone}
                   onChange={handleInputChange}
                   disabled={isLoading}
-                  className={`w-full px-3 py-2 border rounded-md text-neutral-100 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed ${
-                    fieldErrors.phone ? 'border-red-500 bg-red-50' : 'border-neutral-300'
+                  className={`w-full px-3 py-2 border rounded-md bg-neutral-900 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed ${
+                    fieldErrors.phone ? 'border-red-500 bg-red-900/20' : 'border-neutral-800'
                   }`}
                   placeholder="Enter your phone number"
                 />
               </div>
 
               <div>
-                <label htmlFor="currentLocation" className="block text-sm font-medium text-neutral-700 mb-2">
-                  Current location <span className="text-red-500">*</span>
+                <label htmlFor="currentLocation" className="block text-sm font-medium text-white mb-2">
+                  Current location <span className="text-red-400">*</span>
                 </label>
                 <input
                   type="text"
@@ -506,16 +506,16 @@ const JobApplication = () => {
                   value={formData.currentLocation}
                   onChange={handleInputChange}
                   disabled={isLoading}
-                  className={`w-full px-3 py-2 border rounded-md text-neutral-100 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed ${
-                    fieldErrors.currentLocation ? 'border-red-500 bg-red-50' : 'border-neutral-300'
+                  className={`w-full px-3 py-2 border rounded-md bg-neutral-900 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed ${
+                    fieldErrors.currentLocation ? 'border-red-500 bg-red-900/20' : 'border-neutral-800'
                   }`}
                   placeholder="Enter your current location"
                 />
               </div>
 
               <div className="md:col-span-2">
-                <label htmlFor="currentCompany" className="block text-sm font-medium text-neutral-700 mb-2">
-                  Current company <span className="text-red-500">*</span>
+                <label htmlFor="currentCompany" className="block text-sm font-medium text-white mb-2">
+                  Current company <span className="text-red-400">*</span>
                 </label>
                 <input
                   type="text"
@@ -524,8 +524,8 @@ const JobApplication = () => {
                   value={formData.currentCompany}
                   onChange={handleInputChange}
                   disabled={isLoading}
-                  className={`w-full px-3 py-2 border rounded-md text-neutral-100 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed ${
-                    fieldErrors.currentCompany ? 'border-red-500 bg-red-50' : 'border-neutral-300'
+                  className={`w-full px-3 py-2 border rounded-md bg-neutral-900 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed ${
+                    fieldErrors.currentCompany ? 'border-red-500 bg-red-900/20' : 'border-neutral-800'
                   }`}
                   placeholder="Enter your current company or university"
                 />
@@ -534,10 +534,10 @@ const JobApplication = () => {
 
             {/* Links Section */}
             <div>
-              <h3 className="text-lg font-medium text-neutral-800 mb-4">Links</h3>
+              <h3 className="text-lg font-medium text-white mb-4">Links</h3>
               <div className="space-y-4">
                 <div>
-                  <label htmlFor="linkedinUrl" className="block text-sm font-medium text-neutral-700 mb-2">
+                  <label htmlFor="linkedinUrl" className="block text-sm font-medium text-white mb-2">
                     LinkedIn URL
                   </label>
                   <input
@@ -547,13 +547,13 @@ const JobApplication = () => {
                     value={formData.linkedinUrl}
                     onChange={handleInputChange}
                     disabled={isLoading}
-                    className="w-full px-3 py-2 border border-neutral-300 rounded-md text-neutral-100 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full px-3 py-2 border border-neutral-800 rounded-md bg-neutral-900 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed"
                     placeholder="https://linkedin.com/in/yourprofile"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="githubUrl" className="block text-sm font-medium text-neutral-700 mb-2">
+                  <label htmlFor="githubUrl" className="block text-sm font-medium text-white mb-2">
                     GitHub URL
                   </label>
                   <input
@@ -563,13 +563,13 @@ const JobApplication = () => {
                     value={formData.githubUrl}
                     onChange={handleInputChange}
                     disabled={isLoading}
-                    className="w-full px-3 py-2 border border-neutral-300 rounded-md text-neutral-100 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full px-3 py-2 border border-neutral-800 rounded-md bg-neutral-900 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed"
                     placeholder="https://github.com/yourusername"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="otherWebsite" className="block text-sm font-medium text-neutral-700 mb-2">
+                  <label htmlFor="otherWebsite" className="block text-sm font-medium text-white mb-2">
                     Other website
                   </label>
                   <input
@@ -579,7 +579,7 @@ const JobApplication = () => {
                     value={formData.otherWebsite}
                     onChange={handleInputChange}
                     disabled={isLoading}
-                    className="w-full px-3 py-2 border border-neutral-300 rounded-md text-neutral-100 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full px-3 py-2 border border-neutral-800 rounded-md bg-neutral-900 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed"
                     placeholder="https://yourportfolio.com"
                   />
                 </div>
@@ -588,9 +588,9 @@ const JobApplication = () => {
 
             {/* Additional Information */}
             <div>
-              <h3 className="text-lg font-medium text-neutral-800 mb-4">Additional Information</h3>
+              <h3 className="text-lg font-medium text-white mb-4">Additional Information</h3>
               <div>
-                <label htmlFor="coverLetter" className="block text-sm font-medium text-neutral-700 mb-2">
+                <label htmlFor="coverLetter" className="block text-sm font-medium text-white mb-2">
                   Cover Letter
                 </label>
                 <textarea
@@ -600,7 +600,7 @@ const JobApplication = () => {
                   onChange={handleInputChange}
                   disabled={isLoading}
                   rows={4}
-                  className="w-full px-3 py-2 border border-neutral-300 rounded-md text-neutral-100 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full px-3 py-2 border border-neutral-800 rounded-md bg-neutral-900 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed"
                   placeholder="Add a cover letter or anything else you want to share."
                 />
               </div>
@@ -611,7 +611,7 @@ const JobApplication = () => {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="bg-blue-600 text-white px-8 py-3 rounded-md font-medium hover:bg-blue-700 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                className="bg-gradient-to-r from-orange-500 to-orange-800 text-white px-8 py-3 rounded-md font-medium hover:from-orange-600 hover:to-orange-900 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
               >
                 {isLoading ? (
                   <>
@@ -627,8 +627,8 @@ const JobApplication = () => {
             {/* Error Message Below Submit Button */}
             {submitStatus === 'error' && (
               <div className="flex items-center justify-center gap-2 pt-3">
-                <AlertCircle className="w-4 h-4 text-red-500" />
-                <div className="text-red-600 text-sm font-medium">
+                <AlertCircle className="w-4 h-4 text-red-400" />
+                <div className="text-red-300 text-sm font-medium">
                   {errorMessage || 'Application submission failed. Please try again.'}
                 </div>
               </div>
