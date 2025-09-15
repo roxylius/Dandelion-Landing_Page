@@ -338,7 +338,7 @@ const JobApplication = () => {
           <h1 className="text-2xl font-bold text-white mb-2">
             Full-stack developer Intern, Remote
           </h1>
-          <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-500">
+          <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-400">
             <div className="flex items-center gap-1">
               <MapPin className="w-4 h-4" />
               <span>Bengaluru</span>
