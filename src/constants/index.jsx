@@ -15,6 +15,7 @@ import user6 from "../assets/profile-pictures/user6.jpg";
 export const navItems = [
   { label: "Features", href: "#features" },
   { label: "Workflow", href: "#workflow" },
+  { label: "Careers", href: "/careers/software-engineer-intern" },
   // { label: "Pricing", href: "#" },
   // { label: "Testimonials", href: "#" },
 ];

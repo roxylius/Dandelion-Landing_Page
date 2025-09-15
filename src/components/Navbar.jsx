@@ -1,5 +1,6 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "../assets/logo2.png";
 import { navItems } from "../constants";
 
@@ -15,13 +16,19 @@ const Navbar = () => {
       <div className="container px-4 mx-auto relative lg:text-sm">
         <div className="flex justify-between items-center">
           <div className="flex items-center flex-shrink-0">
-            <img className="h-10 w-10 mr-2" src={logo} alt="Logo" />
-            <span className="text-xl tracking-tight">Ocio</span>
+            <Link to="/" className="flex items-center">
+              <img className="h-10 w-10 mr-2" src={logo} alt="Logo" />
+              <span className="text-xl tracking-tight">Ocio</span>
+            </Link>
           </div>
           <ul className="hidden lg:flex ml-14 space-x-12">
             {navItems.map((item, index) => (
               <li key={index}>
-                <a href={item.href}>{item.label}</a>
+                {item.href.startsWith('/') ? (
+                  <Link to={item.href}>{item.label}</Link>
+                ) : (
+                  <a href={item.href}>{item.label}</a>
+                )}
               </li>
             ))}
           </ul>
@@ -47,7 +54,11 @@ const Navbar = () => {
             <ul>
               {navItems.map((item, index) => (
                 <li key={index} className="py-4">
-                  <a href={item.href}>{item.label}</a>
+                  {item.href.startsWith('/') ? (
+                    <Link to={item.href} onClick={toggleNavbar}>{item.label}</Link>
+                  ) : (
+                    <a href={item.href} onClick={toggleNavbar}>{item.label}</a>
+                  )}
                 </li>
               ))}
             </ul>

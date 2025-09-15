@@ -42,6 +42,13 @@ const WaitlistSection = () => {
       return;
     }
 
+    // Check if environment variables are set
+    if (!import.meta.env.VITE_SUPABASE_URL || !import.meta.env.VITE_SUPABASE_ANON_KEY) {
+      setSubmitStatus('error');
+      setErrorMessage('Service is not configured. Please contact support.');
+      return;
+    }
+
     setIsLoading(true);
     setSubmitStatus(null);
     setErrorMessage('');
@@ -188,6 +195,7 @@ const WaitlistSection = () => {
           <p className="text-neutral-400 mb-4">For any queries, reach out at</p>
           <div className="flex justify-center gap-6">
             <a
+            
               href="#"
               className="text-neutral-400 hover:text-white transition-colors duration-300 flex items-center gap-2"
             >
